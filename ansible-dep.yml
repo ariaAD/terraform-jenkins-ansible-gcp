@@ -1,0 +1,63 @@
+- name: Deploy nginx in GKE
+  hosts: localhost
+  connection: local
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+  tasks:
+    - name: Create nginx namespace
+      k8s:
+        state: "{{ state }}"
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: nginx
+
+    - name: Create nginx deployment
+      k8s:
+        state: "{{ state }}"
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: nginx-deployment
+            namespace: nginx
+          spec:
+            selector:
+              matchLabels:
+                app: nginx
+            replicas: 2
+            template:
+              metadata:
+                labels:
+                  app: nginx
+              spec:
+                containers:
+                - name: nginx
+                  image: nginx:latest
+                  ports:
+                  - containerPort: 80
+                  resources:
+                    limits:
+                      cpu: "0.2"
+                      memory: 200Mi
+
+    - name: Expose deployment
+      k8s:
+        state: "{{ state }}"
+        definition:
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: nginx-service
+            namespace: nginx
+            labels:
+              app: nginx
+          spec:
+            selector:
+              app: nginx
+            ports:
+              - port: 80
+                targetPort: 80
+            type: LoadBalancer

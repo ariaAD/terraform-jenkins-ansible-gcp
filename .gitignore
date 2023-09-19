@@ -1,0 +1,7 @@
+**/.terraform/*
+*.terraform
+*.tfvars
+providers.tf
+.terraform.lock.hcl
+crash.log
+
