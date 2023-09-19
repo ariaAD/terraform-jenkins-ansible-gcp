@@ -1,4 +1,4 @@
-# Automatic deployment with Terraform, Jenkins and Ansible integration in GCP
+# Automatic deployment with Terraform, Jenkins and Ansible integration on Google Cloud Platform 
 
 This repo serves as an example how Terraform, Jenkins and Ansible can be integrated to deploy VM for automating GKE and containerized deployment.
 
