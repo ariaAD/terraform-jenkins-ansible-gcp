@@ -27,7 +27,7 @@
             selector:
               matchLabels:
                 app: nginx
-            replicas: 4 
+            replicas: 3
             template:
               metadata:
                 labels:
