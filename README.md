@@ -144,7 +144,9 @@ From the left panel of main page, select New item and create a new Pipeline proj
 
 Set the definition of the pipeline from SCM, use Git SCM, fill out the link to your forked repo in `Repository URL` and use the credential that we have set up.
 
-Save the configuration and the first build should start immediately. Check the build process from the `Stage View` and approve any build prompts that pops up.
+After your repo has been discovered by Jenkins, change the `Branch Specifier` from "*/master" to "*/main".
+
+Save the configuration and initiate the build manually. Check the build process from the `Stage View` and approve any build prompts that pops up.
 
 After GKE has been provisioned and pods are deployed successfully, you can check the external IP of the Load Balancer service by obtaining credentials to the deployed GKE cluster first:
 
