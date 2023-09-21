@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Export environment variables of project and user's email
-export PROJECT=<gcp_project>
-export USER_EMAIL=<user_email>
+export PROJECT=using-terraf-156-817a6acd
+export USER_EMAIL=cloud_user_p_fa024658@linuxacademygclabs.com
 
 # Generating tf files from templates
 envsubst < ./initial/terraform.template > initial/terraform.tfvars

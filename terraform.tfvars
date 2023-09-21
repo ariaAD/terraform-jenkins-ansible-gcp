@@ -1,0 +1,5 @@
+project         = "using-terraf-156-817a6acd"
+region          = "us-west1"
+zone            = "us-west1-b"
+vpc-name        = "auto-net"
+vpc-subnet-name = "auto-subnet"
