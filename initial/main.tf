@@ -6,8 +6,8 @@ provider "google" {
 }
 
 data "google_compute_image" "centos-9" {
-  family      = "centos-stream-9"
-  project     = "centos-cloud"
+  family      = "rocky-linux-9-optimized-gcp"
+  project     = "rocky-linux-cloud"
   most_recent = true
 }
 

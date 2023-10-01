@@ -89,7 +89,7 @@ terraform apply -auto-approve
 
 Note: Please allow the role binding to fully propagate before running `terraform apply -auto-approve` command.
 
-Terraform files in this directory are configured to provision a CentOS Stream 9 GCE, VPC (along with subnetwork, pre-assigned IP CIDR & firewall rules) and Cloud Bucket with object versioning enabled.
+Terraform files in this directory are configured to provision a ~~CentOS Stream 9~~ Rocky Linux 9 GCE, VPC (along with subnetwork, pre-assigned IP CIDR & firewall rules) and Cloud Bucket with object versioning enabled.
 
 ## 3. Setting up GCE deployment automation server
 
