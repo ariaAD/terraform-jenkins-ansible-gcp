@@ -5,7 +5,7 @@ provider "google" {
   impersonate_service_account = "mainsa@${var.project}.iam.gserviceaccount.com"
 }
 
-data "google_compute_image" "centos-9" {
+data "google_compute_image" "rocky-linux-9" {
   family      = "rocky-linux-9-optimized-gcp"
   project     = "rocky-linux-cloud"
   most_recent = true
@@ -34,7 +34,7 @@ resource "google_compute_instance" "vm_instance" {
   
   boot_disk {
     initialize_params {
-      image = data.google_compute_image.centos-9.self_link
+      image = data.google_compute_image.rocky-linux-9.self_link
     }
   }
   
